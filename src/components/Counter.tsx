@@ -1,4 +1,5 @@
 import React from 'react';
+import Render from './Render';
 import { useQueryState } from '../core/index';
 
 const Counter: React.FC = () => {
@@ -9,8 +10,8 @@ const Counter: React.FC = () => {
   return (
     <div>
       <h2>Counter Component</h2>
-      <p>{count}</p>
       <button onClick={countUp}>countUp</button>
+      <Render />
     </div>
   );
 };
