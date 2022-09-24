@@ -3,7 +3,7 @@ import { renderHook, act, waitFor } from '@testing-library/react';
 import { useQueryState } from '../core/index';
 import { createMockProvider } from '../mock/mockProvider';
 
-describe('useQueryState', () => {
+describe('useQueryState: Testing hook', () => {
   const initialSettings = () => {
     const { MockProvider } = createMockProvider();
     const { result } = renderHook(() => useQueryState(['TEST'], { userName: 'Hoge', isLoggedIn: true }), {
