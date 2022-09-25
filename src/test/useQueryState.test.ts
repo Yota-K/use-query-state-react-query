@@ -1,16 +1,21 @@
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, afterEach } from 'vitest';
 import { renderHook, act, waitFor } from '@testing-library/react';
 import { useQueryState } from '../core/index';
 import { createMockProvider } from '../mock/mockProvider';
 
 describe('useQueryState: Testing hook', () => {
+  const { MockProvider, queryClient } = createMockProvider();
+
   const initialSettings = () => {
-    const { MockProvider } = createMockProvider();
     const { result } = renderHook(() => useQueryState(['TEST'], { userName: 'Hoge', isLoggedIn: true }), {
       wrapper: MockProvider,
     });
     return result;
   };
+
+  afterEach(async () => {
+    queryClient.clear();
+  });
 
   test('Set global state.', () => {
     const result = initialSettings();
