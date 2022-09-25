@@ -10,7 +10,7 @@ const Counter: React.FC = () => {
   return (
     <div>
       <h2>Counter Component</h2>
-      <button onClick={countUp}>countUp</button>
+      <button onClick={countUp}>Click</button>
       <Render />
     </div>
   );
