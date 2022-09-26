@@ -53,7 +53,7 @@ jobs:
 
       # Update changelog unreleased section with new version
       - name: Update changelog
-        uses: superfaceai/release-changelog-action@v3
+        uses: mikepenz/release-changelog-builder-action@v3
         with:
           path-to-changelog: CHANGELOG.md
           version: ${{ env.NEW_VERSION }}
@@ -83,7 +83,7 @@ jobs:
       # Read version changelog
       - id: get-changelog
         name: Get version changelog
-        uses: superfaceai/release-changelog-action@v3
+        uses: mikepenz/release-changelog-builder-action@v3
         with:
           path-to-changelog: CHANGELOG.md
           version: ${{ env.NEW_VERSION }}
