@@ -1,6 +1,5 @@
 {
   "name": "use-query-state-react-query",
-  "private": true,
   "version": "1.0.0",
   "description": "This library so as to manage global state for React Query.",
   "type": "module",
