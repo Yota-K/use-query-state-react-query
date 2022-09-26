@@ -4,6 +4,10 @@
   "description": "This library so as to manage global state for React Query.",
   "type": "module",
   "author": "Karukichi Soejima",
+  "keywords": [
+    "react-query",
+    "react"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "run-p build:*",
