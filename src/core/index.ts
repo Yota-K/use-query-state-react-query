@@ -1,6 +1,11 @@
-import { QueryKey, useQueryClient, useQuery } from '@tanstack/react-query';
+import { useQueryClient, useQuery, QueryKey } from '@tanstack/react-query';
 
-export const useQueryState = <T>(key: QueryKey, initial?: T): [T, (arg: T) => void] => {
+// hook types
+export type InitialType<A> = A | undefined;
+export type ResultType<B> = [B, (arg: B) => void];
+export type { QueryKey };
+
+export const useQueryState = <T>(key: QueryKey, initial?: InitialType<T>): ResultType<T> => {
   // getter
   const stateValue = useQuery<T>(key, {
     enabled: false,
