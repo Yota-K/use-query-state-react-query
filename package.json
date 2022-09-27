@@ -9,6 +9,13 @@
     "react"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yota-K/use-query-state-react-query"
+  },
+  "bugs": {
+    "url": "https://github.com/Yota-K/use-query-state-react-query/issues"
+  },
   "scripts": {
     "build": "run-p build:*",
     "build:scripts": "vite build",
