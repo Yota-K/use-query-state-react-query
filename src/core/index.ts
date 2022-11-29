@@ -14,7 +14,9 @@ export const useQueryState = <T>(key: QueryKey, initial?: InitialType<T>): Resul
 
   // setter
   const queryClient = useQueryClient();
-  const stateSetter = (arg: T) => queryClient.setQueryData<T>(key, arg);
+  const stateSetter = (arg: T) => {
+    queryClient.setQueryData<T>(key, arg);
+  };
 
   return [stateValue, stateSetter];
 };
