@@ -1,6 +1,6 @@
 {
   "name": "use-query-state-react-query",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "This library so as to manage global state for React Query.",
   "type": "module",
   "author": "Karukichi Soejima",
