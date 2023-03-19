@@ -17,7 +17,7 @@ describe('useQueryState: Testing hook', () => {
     queryClient.clear();
   });
 
-  test('Set global state.', () => {
+  test('Read global state.', () => {
     const result = initialSettings();
     const [getter] = result.current;
 
@@ -25,7 +25,7 @@ describe('useQueryState: Testing hook', () => {
     expect(getter.isLoggedIn).toBeTruthy();
   });
 
-  test('Change global state.', async () => {
+  test('If the argument of the setter function is a value case.', async () => {
     const result = initialSettings();
 
     // change state value
@@ -36,6 +36,24 @@ describe('useQueryState: Testing hook', () => {
 
     // Using React 18 or later, Required "waitFor"
     // https://tanstack.com/query/v4/docs/guides/testing#our-first-test
+    await waitFor(() => expect(result.current[0].userName).toBe(''));
+    await waitFor(() => expect(result.current[0].isLoggedIn).toBe(false));
+  });
+
+  test('If the argument of the setter function is a function case.', async () => {
+    const result = initialSettings();
+
+    await act(async () => {
+      const [_, setter] = result.current;
+      setter((prev) => {
+        return {
+          ...prev,
+          userName: '',
+          isLoggedIn: false,
+        };
+      });
+    });
+
     await waitFor(() => expect(result.current[0].userName).toBe(''));
     await waitFor(() => expect(result.current[0].isLoggedIn).toBe(false));
   });

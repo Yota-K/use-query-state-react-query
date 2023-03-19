@@ -3,9 +3,9 @@ import Render from './Render';
 import { useQueryState } from '../core/index';
 
 const Counter: React.FC = () => {
-  const [count, setCount] = useQueryState(['COUNTER'], 1);
+  const [_, setCount] = useQueryState(['COUNTER'], 1);
   const countUp = () => {
-    setCount(count + 1);
+    setCount((prev) => prev + 1);
   };
   return (
     <div>

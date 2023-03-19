@@ -1,5 +1,5 @@
 # useQueryState
-This library so as to manage global state for [React Query](https://github.com/tanstack/query).   
+This library so as to manage global state for [TanStack Query](https://github.com/tanstack/query).   
 If you installed this library, you can manage global state other than data fetch.
 
 ## Installing
@@ -50,8 +50,13 @@ import { useQueryState } from 'use-query-state-react-query';
 const Counter: React.FC = () => {
   const [count, setCount] = useQueryState(['COUNTER'], 1);
   const countUp = () => {
-    setCount(count + 1);
+    setCount((prev) => prev + 1);
   };
+
+  // Another case.
+  // const countUp = () => {
+  //   setCount(count + 1);
+  // };
   return (
     <div>
       <h2>Counter Component</h2>
